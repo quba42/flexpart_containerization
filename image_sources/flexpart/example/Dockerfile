@@ -1,4 +1,4 @@
-FROM debian/build-flexpart
+FROM flexpart/custom_build
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
 ADD flexpart_example /flexpart_example
