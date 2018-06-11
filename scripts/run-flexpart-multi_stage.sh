@@ -7,12 +7,12 @@ IMAGE_NAME='flexpart/multi_stage'
 CONTAINER_NAME='flexpart-prototype'
 INPUT_VOLUME='flexpart_input_local'
 OUTPUT_VOLUME='flexpart_output_local'
+ENV_FILE='flexpart.conf'
 HELP_TEXT="\
 ./run-flexpart-multi_stage.sh <options>
 
   -h    display this help message;
   -i    run the docker container interactively;"
-
 
 #options processing:
 while getopts "ih" option "$@" ; do
@@ -39,6 +39,7 @@ done
 docker run ${EXTRA_OPTS}\
  --name ${CONTAINER_NAME}\
  --rm\
+ --env-file ${ENV_FILE}\
  --mount source=${INPUT_VOLUME},target=/flexpart_input\
  --mount source=${OUTPUT_VOLUME},target=/flexpart_output\
  ${IMAGE_NAME}:${IMAGE_VERSION}
