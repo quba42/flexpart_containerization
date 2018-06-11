@@ -3,4 +3,6 @@
 ulimit -s unlimited
 export OMP_STACKSIZE=512M
 
-./flexpart.gfs | tee flexpart.out
+mkdir -p /flexpart_output/output
+
+./flexpart.gfs | tee /flexpart_output/flexpart.out
