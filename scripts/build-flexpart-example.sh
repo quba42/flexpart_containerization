@@ -4,7 +4,7 @@
 
 # constants:
 
-VERSION=''
+VERSION='main'
 NAME='flexpart/example'
 SOURCE_DIR="../image_sources/${NAME}"
 

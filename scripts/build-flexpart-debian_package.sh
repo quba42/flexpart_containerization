@@ -4,7 +4,7 @@
 
 # constants:
 
-VERSION=''
+VERSION='main'
 NAME='flexpart/debian_package'
 SOURCE_DIR="../image_sources/${NAME}"
 

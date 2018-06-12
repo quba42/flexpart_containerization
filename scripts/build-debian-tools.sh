@@ -4,7 +4,7 @@
 
 # constants:
 
-VERSION=''
+VERSION='main'
 NAME='debian/tools'
 SOURCE_DIR="../image_sources/${NAME}"
 

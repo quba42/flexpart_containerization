@@ -3,7 +3,7 @@
 
 # constants:
 
-IMAGE_VERSION='0.1'
+IMAGE_VERSION='main'
 IMAGE_NAME='flexpart/multi_stage'
 CONTAINER_NAME='flexpart-prototype'
 INPUT_VOLUME='flexpart_input_local'
