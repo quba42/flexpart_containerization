@@ -11,7 +11,7 @@ RUN apt-get -y install libgrib-api-dev && \
     apt-get -y install build-essential && \
     make clean ; make
 
-FROM debian/base:main AS runtime
+FROM debian/tools:main AS runtime
 
 ADD flexpart_model /flexpart_model
 WORKDIR /flexpart_model
