@@ -1,4 +1,4 @@
-FROM flexpart/custom_build
+FROM flexpart/custom_build:main
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
 ADD flexpart_example /flexpart_example

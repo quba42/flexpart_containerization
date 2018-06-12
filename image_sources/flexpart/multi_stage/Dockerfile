@@ -1,4 +1,4 @@
-FROM debian/base AS builder
+FROM debian/base:main AS builder
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
 ADD flexpart_code /flexpart_code
@@ -11,7 +11,7 @@ RUN apt-get -y install libgrib-api-dev && \
     apt-get -y install build-essential && \
     make clean ; make
 
-FROM debian/base AS runtime
+FROM debian/base:main AS runtime
 
 ADD flexpart_model /flexpart_model
 WORKDIR /flexpart_model
