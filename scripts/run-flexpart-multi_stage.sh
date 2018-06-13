@@ -13,6 +13,7 @@ OUTPUT_VOLUME='flexpart_output_local'
 
 docker run\
  --name ${CONTAINER_NAME}\
+ --rm\
  -it --entrypoint=bash\
  --mount source=${INPUT_VOLUME},target=/flexpart_input\
  --mount source=${OUTPUT_VOLUME},target=/flexpart_output\
