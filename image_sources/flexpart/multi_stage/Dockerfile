@@ -13,7 +13,8 @@ RUN apt-get -y install libgrib-api-dev && \
 # This container is used to run our FLEXPART model:
 FROM debian/tools:main AS runtime
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
-ENV PATH="${PATH}:/flexpart_model"
+ENV PATH="${PATH}:/flexpart_model" \
+    OMP_STACKSIZE="512M"
 
 COPY flexpart_model /flexpart_model
 WORKDIR /flexpart_model
