@@ -13,6 +13,7 @@ RUN apt-get -y install libgrib-api-dev && \
 # This container is used to run our FLEXPART model:
 FROM debian/tools:main AS runtime
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
+ENV PATH="${PATH}:/flexpart_model"
 
 COPY flexpart_model /flexpart_model
 WORKDIR /flexpart_model
@@ -22,4 +23,5 @@ RUN apt-get -y install libgrib-api-dev && \
     apt-get update && \
     apt-get -y install libjasper-dev
 
-CMD ["flexpart.sh"]
+ENTRYPOINT ["flexpart.sh"]
+CMD ["flexpart.gfs"]
