@@ -13,16 +13,16 @@ RUN apt-get -y install libgrib-api-dev && \
 # This container is used to run our FLEXPART model:
 FROM debian/tools:main AS runtime
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
-ENV PATH="${PATH}:/flexpart_model" \
-    OMP_STACKSIZE="512M"
 
-COPY flexpart_model /flexpart_model
-WORKDIR /flexpart_model
-COPY --from=builder /flexpart_code/flexpart.gfs /flexpart_model/flexpart.gfs
 RUN apt-get -y install libgrib-api-dev && \
     echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y install libjasper-dev
+COPY flexpart_model /flexpart_model
+WORKDIR /flexpart_model
+COPY --from=builder /flexpart_code/flexpart.gfs /flexpart_model/flexpart.gfs
 
+ENV PATH="${PATH}:/flexpart_model" \
+    OMP_STACKSIZE="512M"
 ENTRYPOINT ["flexpart.sh"]
 CMD ["flexpart.gfs"]
