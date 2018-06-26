@@ -15,6 +15,7 @@ FROM debian/tools:main AS runtime
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
 RUN apt-get -y install libgrib-api-dev && \
+    apt-get -y install bc && \
     echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list && \
     apt-get update && \
     apt-get -y install libjasper-dev
