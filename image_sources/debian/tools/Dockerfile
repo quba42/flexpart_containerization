@@ -1,7 +1,10 @@
 FROM debian:stretch
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
-# install additional debian tools that are nice to have in interactive containers:
-RUN apt-get -y install vim ranger less
+#Install additional debian tools for interactive containers:
+RUN apt-get update && apt-get install -y \
+    less \
+    ranger \
+    vim
 
-CMD ["/bin/bash"]
+CMD ["bash"]

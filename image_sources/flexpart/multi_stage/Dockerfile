@@ -1,24 +1,26 @@
-# This container is used to compile FLEXPART:
+#This container is used to compile FLEXPART:
 FROM debian:stretch AS builder
 ADD flexpart_code /flexpart_code
 WORKDIR /flexpart_code
-RUN apt-get -y install libgrib-api-dev && \
-    echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get -y install libjasper-dev && \
-    apt-get -y install gfortran && \
-    apt-get -y install build-essential && \
-    make clean ; make
+RUN apt-get update && apt-get install -y \
+    gfortran \
+    libgrib-api-dev \
+    build-essential \
+ && echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list \
+ && apt-get update && apt-get install -y \
+    libjasper-dev \
+ && make clean ; make
 
-# This container is used to run our FLEXPART model:
+#This container is used to run our FLEXPART model:
 FROM debian/tools:main AS runtime
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
-RUN apt-get -y install libgrib-api-dev && \
-    apt-get -y install bc && \
-    echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list && \
-    apt-get update && \
-    apt-get -y install libjasper-dev
+RUN apt-get update && apt-get install -y \
+    bc \
+    libgrib-api-dev \
+ && echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list \
+ && apt-get update && apt-get install -y \
+    libjasper-dev
 COPY flexpart_model /flexpart_model
 WORKDIR /flexpart_model
 COPY --from=builder /flexpart_code/flexpart.gfs /flexpart_model/flexpart.gfs
