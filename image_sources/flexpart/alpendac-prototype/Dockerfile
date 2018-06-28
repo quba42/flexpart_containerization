@@ -1,12 +1,12 @@
 #This container is used to compile FLEXPART:
 FROM debian:stretch AS builder
 RUN apt-get update && apt-get install -y \
-    gfortran \
-    libgrib-api-dev \
-    build-essential \
+    gfortran=4:6.3.0-4 \
+    libgrib-api-dev=1.19.0-1 \
+    build-essential=12.3 \
  && echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list \
  && apt-get update && apt-get install -y \
-    libjasper-dev
+    libjasper-dev=1.900.1-debian1-2.4+deb8u3
 WORKDIR /flexpart_code
 COPY flexpart_code /flexpart_code/
 RUN make clean ; make
@@ -16,11 +16,11 @@ COPY flexpart_model /flexpart_model/
 FROM debian:stretch AS runtime
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 RUN apt-get update && apt-get install -y \
-    bc \
-    libgrib-api-dev \
+    bc=1.06.95-9+b3 \
+    libgrib-api-dev=1.19.0-1 \
  && echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list \
  && apt-get update && apt-get install -y \
-    libjasper-dev
+    libjasper-dev=1.900.1-debian1-2.4+deb8u3
 WORKDIR /flexpart_model
 COPY --from=builder /flexpart_model /flexpart_code/flexpart.gfs /flexpart_model/
 ENV PATH="${PATH}:/flexpart_model" \
