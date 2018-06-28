@@ -1,4 +1,4 @@
-FROM debian/base:main
+FROM debian:stretch
 LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
 # install additional debian tools that are nice to have in interactive containers:

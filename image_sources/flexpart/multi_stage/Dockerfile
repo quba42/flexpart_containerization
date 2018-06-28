@@ -1,5 +1,5 @@
 # This container is used to compile FLEXPART:
-FROM debian/base:main AS builder
+FROM debian:stretch AS builder
 ADD flexpart_code /flexpart_code
 WORKDIR /flexpart_code
 RUN apt-get -y install libgrib-api-dev && \
