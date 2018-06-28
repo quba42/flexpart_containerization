@@ -9,6 +9,7 @@ ulimit -s unlimited
 configure_COMMAND.sh
 configure_RELEASES.sh
 configure_pathnames.sh
+env_output.sh
 
 #Execute the FLEXPART run:
 exec "$@"
