@@ -23,25 +23,25 @@ fi
 
 #Process variables dependent on the run DIRECTION:
 if [[ ${DIRECTION} == 1 ]] ; then
-  HOURS_REMAINING=$(( 24-${START_HOUR} ))
-  if [[ ${RELEASE_LENGTH} -ge ${HOURS_REMAINING} ]]; then
+  HOURS_REMAINING=$(( 24 - 10#${START_HOUR} ))
+  if [[ 10#${RELEASE_LENGTH} -ge 10#${HOURS_REMAINING} ]]; then
     END_DATE="$( date -d "${START_DATE}+1 days" --iso-8601=date )"
-    END_HOUR="$(( ${RELEASE_LENGTH} - ${HOURS_REMAINING} ))"
+    END_HOUR="$(( 10#${RELEASE_LENGTH} - 10#${HOURS_REMAINING} ))"
   else
     END_DATE="${START_DATE}"
-    END_HOUR="$(( ${START_HOUR}+${RELEASE_LENGTH} ))"
+    END_HOUR="$(( 10#${START_HOUR} + 10#${RELEASE_LENGTH} ))"
   fi
   END_HOUR="$( printf "%02d" "${END_HOUR}" )"
 elif [[ ${DIRECTION} == -1 ]] ; then
   END_DATE="${START_DATE}"
   END_HOUR="${START_HOUR}"
-  if [[ ${RELEASE_LENGTH} -gt ${END_HOUR} ]]; then
+  if [[ 10#${RELEASE_LENGTH} -gt 10#${END_HOUR} ]]; then
     START_DATE="$( date -d "${END_DATE}-1 days" --iso-8601=date )"
-    OVERFLOW_HOURS="$(( ${RELEASE_LENGTH} - ${END_HOUR} ))"
-    START_HOUR="$(( 24 - ${OVERFLOW_HOURS} ))"
+    OVERFLOW_HOURS="$(( 10#${RELEASE_LENGTH} - 10#${END_HOUR} ))"
+    START_HOUR="$(( 24 - 10#${OVERFLOW_HOURS} ))"
   else
     #START_DATE is already the same as END_DATE
-    START_HOUR="$(( ${END_HOUR} - ${RELEASE_LENGTH} ))"
+    START_HOUR="$(( 10#${END_HOUR} - 10#${RELEASE_LENGTH} ))"
   fi
   START_HOUR="$( printf "%02d" "${START_HOUR}" )"
 else
