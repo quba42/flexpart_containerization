@@ -3,13 +3,13 @@
 
 #constants:
 IMAGE_VERSION='main'
-IMAGE_NAME='flexpart/multi_stage'
-CONTAINER_NAME='flexpart-prototype'
+IMAGE_NAME='flexpart/alpendac-prototype'
+CONTAINER_NAME='flexpart-run'
 INPUT_VOLUME='flexpart_input_local'
 OUTPUT_VOLUME='flexpart_output_local'
 ENV_FILE='flexpart.conf'
 HELP_TEXT="\
-./run-flexpart-multi_stage.sh <options>
+./run-flexpart-alpendac-prototype.sh <options>
 
   -h    display this help message;
   -i    run the docker container interactively;"

@@ -5,9 +5,9 @@
 #Constants:
 
 VERSION='main'
-NAME='debian/tools'
+NAME='flexpart/alpendac-prototype'
 SOURCE_DIR="../image_sources/${NAME}"
 
 #Commands:
-#docker pull debian:stretch
+
 docker build "${SOURCE_DIR}" -t "${NAME}:${VERSION}"
