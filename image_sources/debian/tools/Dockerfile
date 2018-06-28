@@ -3,6 +3,7 @@ LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
 
 #Install additional debian tools for interactive containers:
 RUN apt-get update && apt-get install -y \
+    aptitude \
     less \
     ranger \
     vim
