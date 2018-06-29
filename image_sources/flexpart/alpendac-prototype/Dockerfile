@@ -20,7 +20,8 @@ RUN apt-get update && apt-get install -y \
     libgrib-api-dev=1.19.0-1 \
  && echo "deb http://deb.debian.org/debian jessie main" >> /etc/apt/sources.list \
  && apt-get update && apt-get install -y \
-    libjasper-dev=1.900.1-debian1-2.4+deb8u3
+    libjasper-dev=1.900.1-debian1-2.4+deb8u3 \
+ && rm -rf /var/lib/apt/lists/*
 WORKDIR /flexpart_model
 COPY --from=builder /flexpart_model /flexpart_code/flexpart.gfs /flexpart_model/
 ENV PATH="${PATH}:/flexpart_model" \
