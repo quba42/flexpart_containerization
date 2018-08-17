@@ -17,7 +17,7 @@ LIBPATH1 = /usr/lib
 
 #high-perf
 #FFLAGS   = -frecord-gcc-switches -fopenmp -march=native -flto -O3 -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -I$(INCPATH)
-FFLAGS   = -fopenmp -frecord-gcc-switches -march=native -O3 -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -I$(INCPATH)
+FFLAGS   = -fopenmp -frecord-gcc-switches -march=core2 -O2 -m64 -mcmodel=medium -fconvert=little-endian -frecord-marker=4 -I$(INCPATH)
 
 #debug
 #FFLAGS   = -frecord-gcc-switches -O1 -fbacktrace -m64 -mcmodel=medium -fcheck=all -Wall -g -fconvert=little-endian -frecord-marker=4 -I$(INCPATH)
