@@ -24,3 +24,5 @@ Actually running simulations requires appropriate input data (not provided by th
 # TODO
 
 * Extend the README.md file to provide a proper documentation.
+* Add more extensive "sanity checks" to the quicklook container.
+* Implement the missing command line options for the quicklook container.

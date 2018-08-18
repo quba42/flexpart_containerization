@@ -1,0 +1,3 @@
+[submodule "quicklook_sources"]
+	path = quicklook/sources
+	url = git@github.com:Quba42/quicklook.git
