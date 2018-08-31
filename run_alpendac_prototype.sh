@@ -5,7 +5,7 @@
 IMAGE_VERSION='main'
 IMAGE_NAME='flexpart/alpendac-prototype'
 CONTAINER_NAME='flexpart-run'
-INPUT_VOLUME='flexpart_input_local'
+INPUT_VOLUME='flexpart_input_sshfs'
 OUTPUT_VOLUME='flexpart_output_local'
 ENV_FILE='flexpart.conf'
 HELP_TEXT="\
