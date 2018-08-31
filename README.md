@@ -23,14 +23,6 @@ Actually running simulations requires appropriate input data (not provided by th
 * Each docker image build context provided, is placed within its own folder in the repository root.
 
 
-# TODO
-
-* Extend the README.md file to provide a proper documentation.
-* Add more extensive "sanity checks" to the quicklook container.
-* Implement the missing command line options for the quicklook container.
-* Add a license to this repository.
-
-
 # Basic Usage Instructions
 
 The following describes a quick guide how to run a basic Flexpart simulation.
@@ -53,3 +45,27 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 8. Run your first example simulation using default parameters: `./run_alpendac_prototype.sh`
 
 > Note that the creation of any volume containing relevant Flexpart input data will work instead of steps 4-6 above.
+
+
+# A Note on Licensing
+
+This repository is released under version 3 of the GNU General Public License.
+See the LICENSE file in the repository root for details.
+
+Please note that this repository includes QuickLook sources as a submodule.
+(Stored in the folder `/quicklook/sources/`).
+These sources are not covered by the license of this repository, but rather by any licenses contained within the submodule.
+
+Please note also that this repository contains Flexpart source code.
+(Stored in the folder `/alpendac_prototype/flexpart_code/`).
+Flexpart is itself released under version 3 of the GNU General Public License.
+The version of the Flexpart source code included in this repository may have been modified from the original upstream sources.
+It counts as a "modified version" as laid out in version 3 of the GNU GPL.
+This modified version is released under version 3 of the GNU GPL without any additional conditions.
+
+
+# TODO
+
+* Extend the README.md file to provide a proper documentation.
+* Add more extensive "sanity checks" to the quicklook container.
+* Implement the missing command line options for the quicklook container.
