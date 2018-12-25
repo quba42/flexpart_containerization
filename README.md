@@ -62,10 +62,3 @@ Flexpart is itself released under version 3 of the GNU General Public License.
 The version of the Flexpart source code included in this repository may have been modified from the original upstream sources.
 It counts as a "modified version" as laid out in version 3 of the GNU GPL.
 This modified version is released under version 3 of the GNU GPL without any additional conditions.
-
-
-# TODO
-
-* Extend the README.md file to provide a proper documentation.
-* Add more extensive "sanity checks" to the quicklook container.
-* Implement the missing command line options for the quicklook container.
