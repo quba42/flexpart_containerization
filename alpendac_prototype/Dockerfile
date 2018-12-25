@@ -9,12 +9,12 @@ RUN apt-get update && apt-get install -y \
     libjasper-dev=1.900.1-debian1-2.4+deb8u3
 WORKDIR /flexpart_code
 COPY flexpart_code /flexpart_code/
-RUN make clean ; make
+RUN make
 COPY flexpart_model /flexpart_model/
 
 #This container is used to run our FLEXPART model:
 FROM debian:stretch AS runtime
-LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
+LABEL maintainer="Quirin Pamp <q.pamp.2009@my.bristol.ac.uk>"
 RUN apt-get update && apt-get install -y \
     bc=1.06.95-9+b3 \
     libgrib-api-dev=1.19.0-1 \
