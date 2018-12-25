@@ -10,7 +10,7 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /flexpart_code
 COPY flexpart_code /flexpart_code/
 RUN make
-COPY flexpart_model /flexpart_model/
+COPY model /flexpart_model/
 
 #This container is used to run our FLEXPART model:
 FROM debian:stretch AS runtime
