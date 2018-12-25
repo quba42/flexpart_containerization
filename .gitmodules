@@ -2,5 +2,5 @@
 	path = image_sources/quicklook/sources
 	url = git@github.com:quba42/quicklook.git
 [submodule "flexpart_sources"]
-	path = alpendac_prototype/sources
+	path = image_sources/flexpart/sources
 	url = git@github.com:quba42/flexpart.git
