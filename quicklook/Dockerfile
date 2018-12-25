@@ -1,5 +1,5 @@
 FROM debian:jessie
-LABEL maintainer="Quirin Pamp <pampq@cip.ifi.lmu.de>"
+LABEL maintainer="Quirin Pamp <q.pamp.2009@my.bristol.ac.uk>"
 
 #Install quicklook-gif dependencies:
 RUN apt-get update && apt-get install -y \

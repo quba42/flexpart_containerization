@@ -1,3 +1,6 @@
 [submodule "quicklook_sources"]
 	path = quicklook/sources
-	url = git@github.com:Quba42/quicklook.git
+	url = git@github.com:quba42/quicklook.git
+[submodule "flexpart_sources"]
+	path = alpendac_prototype/sources
+	url = git@github.com:quba42/flexpart.git
