@@ -1,15 +1,11 @@
 #!/bin/bash
-#Convenience script for building the flexpart/alpendac-prototype image with
-#fully explicit tag.
+# Convenience script for building the FLEXPART Docker image
 
-#Constants:
-
-VERSION='main'
+VERSION='alpendac'
 BASE_NAME='flexpart'
-IMAGE_NAME='alpendac-prototype'
+IMAGE_NAME='flexpart'
 FULL_NAME="${BASE_NAME}/${IMAGE_NAME}"
-SOURCE_DIR="alpendac_prototype"
+REPOSITORY_ROOT=$(git rev-parse --show-toplevel)
+IMAGE_SOURCE_DIR="${REPOSITORY_ROOT}/image_sources/flexpart"
 
-#Commands:
-
-docker build "${SOURCE_DIR}" -t "${FULL_NAME}:${VERSION}"
+docker build "${IMAGE_SOURCE_DIR}" -t "${FULL_NAME}:${VERSION}"
