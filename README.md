@@ -67,5 +67,5 @@ This repository is released under version 3 of the GNU General Public License.
 See the LICENSE file in the repository root for details.
 
 Note that this repository contains seperate projects as Git submodules.
-Any so included sources are not covered by the license of this repository, but rather by any licenses contained within the submodules themselves.
+Any so included sources are not covered by the license of this repository, but rather by any license contained within the submodules themselves.
 You can use the command `git submodule` to obtain a list of the currently included submodules.
