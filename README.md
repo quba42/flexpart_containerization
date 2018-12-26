@@ -50,7 +50,7 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 This repository currently includes two tags in its history.
 
 The `alpendac_portotype` tag marks the final point in this repositories history that is referenced by the bachelors thesis that originally motivated this project.
-(The final version of this bachelors thesis can be found under `documentation/bachelors_thesis.pdf`.)
+The final version of this bachelors thesis can be found under `documentation/bachelors_thesis.pdf`.
 
 The `legacy_history` tag marks the point in the history at which this repository was extracted from its non public parent repository to form a stand alone project.
 
