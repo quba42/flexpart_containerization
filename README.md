@@ -14,20 +14,28 @@ As of this writing, actually running simulations requires appropriate input data
 
 
 # Usage
+
+This project aims to provide out of the box FLEXPART simulations on any linux host with a working Docker installation.
+
+> See https://docs.docker.com/install/ for more on obtaining Docker.
+> It should generally be possible to install Docker via the package manager of any major linux distribution.
+
+As of this writing there is one additional major caveat:
+The Docker images provided by this repository require access to FLEXPART input data belonging to the AlpEnDAC project.
+Using any other input data likely requires extensive reconfiguration of the FLEXPART model configuration used.
+Providing alternatives is a priority for this project.
+
+> Note also, that this repository was developed and tested with Docker version 18.03.1.
+> It may not work with much older versions of Docker.
+
+
 ## Quick Start Guide
 
 The following describes how to run a basic FLEXPART simulation.
 Currently it requires access to FLEXPART input data belonging to AlpEnDAC.
 
-> Note that these instructions presume a Linux system with a working Docker installation.
-> For more on obtaining Docker, see https://docs.docker.com/install/.
-> Ultimately, Docker is likely to be available via your distributions package manager.
-
-> Note also that this repository was developed and tested with Docker version 18.03.1.
-> It may not work with much older versions of Docker.
-
 1. Clone this repository to any Linux host with a working Docker installation.
-2. Change working directory to the repository base: `cd <path_to_git_repo>/flexpart_containerization/`
+2. Change working directory to the repository base: `cd flexpart_containerization`
 3. Run `git submodule init` and `git submodule update` to ensure the submodules are downloaded.
 4. Build the main container image: `./scripts/build_flexpart.sh`
 5. Create the needed data volumes: `docker volume create flexpart_input_local` and `docker volume create flexpart_output_local`
@@ -38,11 +46,18 @@ Currently it requires access to FLEXPART input data belonging to AlpEnDAC.
 The output data of your FLEXPART run will be placed inside the `flexpart_output_local` volume.
 
 > Note that there are many possible ways to achieve steps 5 to 7 above.
-> The official Docker documentation (https://docs.docker.com) is a good place to get started.
-> Providing a fully automated default way to achieve these steps is a priority TODO for this project.
+> The official Docker documentation (https://docs.docker.com) is a good next point of call.
 
 
-## The QuickLook Container
+## Advanced Usage
+
+Once you have achieved a successfull containerized FLEXPART run, you can start experimenting with the run configuration found under `env_files/flexpart.env`.
+If the provided configuration parameters are insufficient you will need to manually modify the FLEXPART model configuration used under `image_sources/flexpart/model/` and rebuild the Docker image with your modifications.
+It is the aim of this project to keep extending the provided configuration interface until such manual model adjustments become unnecessary.
+
+This repository also provides a QuickLook container image that can be used to run post processing visualizations on FLEXPART output data.
+The image can be built by running `./scripts/build_quicklook.sh` from the repository root.
+
 
 # Contribution Guide
 ## General Conventions
