@@ -1,20 +1,19 @@
 #!/bin/bash
-#convenience script for running the flexpart/multi_stage container.
+# Convenience script for running the FLEXPART Docker container.
 
-#constants:
-IMAGE_VERSION='main'
-IMAGE_NAME='flexpart/alpendac-prototype'
+IMAGE_VERSION='alpendac'
+IMAGE_NAME='flexpart/flexpart'
 CONTAINER_NAME='flexpart-run'
-INPUT_VOLUME='flexpart_input_sshfs'
+INPUT_VOLUME='flexpart_input_local'
 OUTPUT_VOLUME='flexpart_output_local'
-ENV_FILE='flexpart.conf'
+REPOSITORY_ROOT=$(git rev-parse --show-toplevel)
+ENV_FILE="${REPOSITORY_ROOT}/env_files/flexpart.env"
 HELP_TEXT="\
 ./run-flexpart-alpendac-prototype.sh <options>
 
   -h    display this help message;
   -i    run the docker container interactively;"
 
-#options processing:
 while getopts "ih" option "$@" ; do
   case $option in
     i) #run the container interactively:
@@ -35,7 +34,6 @@ while getopts "ih" option "$@" ; do
   esac
 done
 
-#commands:
 docker run ${EXTRA_OPTS}\
  --name ${CONTAINER_NAME}\
  --rm\

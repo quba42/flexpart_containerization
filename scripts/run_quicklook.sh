@@ -1,8 +1,7 @@
 #!/bin/bash
-#convenience script for running the flexpart/multi_stage container.
+# Convenience script for running the QuickLook Docker container.
 
-#constants:
-IMAGE_VERSION='main'
+IMAGE_VERSION='beta'
 IMAGE_NAME='flexpart/quicklook'
 CONTAINER_NAME='quicklook-run'
 OUTPUT_VOLUME='flexpart_output_local'
@@ -20,7 +19,6 @@ HELP_TEXT="\
   -e    pass the -e argument to the container;
   -v    pass the -v argument to the container;"
 
-#options processing:
 while getopts "ihn:o:ev" option "$@" ; do
   case $option in
     v)
@@ -53,7 +51,6 @@ while getopts "ihn:o:ev" option "$@" ; do
   esac
 done
 
-#commands:
 docker run ${EXTRA_OPTS}\
  --name ${CONTAINER_NAME}\
  --rm\
