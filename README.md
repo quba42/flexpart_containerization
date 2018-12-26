@@ -66,13 +66,6 @@ Any subsequently modified releases of the same container image containing the sa
 This repository is released under version 3 of the GNU General Public License.
 See the LICENSE file in the repository root for details.
 
-Please note that this repository includes QuickLook sources as a submodule.
-(Stored in the folder `/quicklook/sources/`).
-These sources are not covered by the license of this repository, but rather by any licenses contained within the submodule.
-
-Please note also that this repository contains Flexpart source code.
-(Stored in the folder `/alpendac_prototype/flexpart_code/`).
-Flexpart is itself released under version 3 of the GNU General Public License.
-The version of the Flexpart source code included in this repository may have been modified from the original upstream sources.
-It counts as a "modified version" as laid out in version 3 of the GNU GPL.
-This modified version is released under version 3 of the GNU GPL without any additional conditions.
+Note that this repository contains seperate projects as Git submodules.
+Any so included sources are not covered by the license of this repository, but rather by any licenses contained within the submodules themselves.
+You can use the command `git submodule` to obtain a list of the currently included submodules.

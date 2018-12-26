@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y \
  && apt-get update && apt-get install -y \
     libjasper-dev=1.900.1-debian1-2.4+deb8u3
 WORKDIR /flexpart_code
-COPY sources /flexpart_code/
+COPY sources/flexpart_code /flexpart_code/
 RUN make
 COPY model /flexpart_model/
 
