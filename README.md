@@ -4,7 +4,7 @@ The `documentation` folder also includes the final version of the bachelors thes
 
 # Introduction
 
-This project provides docker image sources for a number of containers that can be used to run pre configured FLEXPART simulations (see https://www.flexpart.eu/).
+This project provides Docker image sources for a number of containers that can be used to run pre configured FLEXPART simulations (see https://www.flexpart.eu/).
 These pre configured FLEXPART simulations were originally designed to meet the needs of the AlpEnDAC project (see https://www.alpendac.eu).
 
 The project now aims to transition these AlpEnDAC specific FLEXPART containers for fully general FLEXPART use.
@@ -15,7 +15,7 @@ As of this writing, actually running simulations requires appropriate input data
 
 # Basic Usage Instructions
 
-The following describes a quick guide how to run a basic Flexpart simulation.
+The following describes a quick guide how to run a basic FLEXPART simulation.
 Currently it requires access to a sshfs based data repository belonging to AlpEnDAC.
 
 > Note that these instructions presume a Linux system with a working Docker installation.
@@ -28,13 +28,13 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 1. Clone this repository to any Linux host with a working Docker installation.
 2. Change to the repositories base directory: `cd <path_to_git_repo>/flexpart_containerization/`
 3. Build the main container image: `./build_alpendac_prototype.sh`
-4. Obtain access to Flexpart input data. (Currently this involves contacting someone at AlpEnDAC about getting access).
+4. Obtain access to FLEXPART input data. (Currently this involves contacting someone at AlpEnDAC about getting access).
 5. Install `vieux/sshfs` (https://github.com/vieux/docker-volume-sshfs) in case you want to use the sshfs based data repository for input data: `docker plugin install vieux/sshfs`
 6. Create the input data volume: `docker volume create -d vieux/sshfs -o sshcmd=weatherdata@<alpendac_sshfs_repo_ip_addr>:/weatherdata/GFS -o password=<password> -o port=<port> flexpart_input_sshfs`
 7. Create a local output data volume: `docker volume create flexpart_output_local`
 8. Run your first example simulation using default parameters: `./run_alpendac_prototype.sh`
 
-> Note that the creation of any volume containing relevant Flexpart input data will work instead of steps 4-6 above.
+> Note that the creation of any volume containing relevant FLEXPART input data will work instead of steps 4-6 above.
 
 # Usage
 # Contribution Guidelines
@@ -60,7 +60,7 @@ The `legacy_history` tag marks the point in the history at which this repository
 Any future tags should mark the point at which a specific container image is released in a specific version.
 Version tags for containers should use the following format: `<container_name>_<contained_software_version>-<container_version>`
 For example, the point in the history that first provides a container image containing FLEXPART version `9.3.2e` would be tagged with `flexpart_9.3.2e-1`.
-Any flexpart images built from this point in the history would then be tagged (using the Docker tag mechanism) with `flexpart/flexpart:9.3.2e-1`.
+Any FLEXPART images built from this point in the history would then be tagged (using the Docker tag mechanism) with `flexpart/flexpart:9.3.2e-1`.
 Any subsequently modified releases of the same container image containing the same version of FLEXPART could then be tagged `flexpart_9.3.2e-2`, `flexpart_9.3.2e-3` and so on.
 
 
