@@ -58,6 +58,7 @@ Any future tags should mark the point at which a specific container image is rel
 Version tags for containers should use the following format: `<container_name>_<contained_software_version>-<container_version>`
 For example, the point in the history that first provides a container image containing FLEXPART version `9.3.2e` would be tagged with `flexpart_9.3.2e-1`.
 Any flexpart images built from this point in the history would then be tagged (using the Docker tag mechanism) with `flexpart/flexpart:9.3.2e-1`.
+Any subsequently modified releases of the same container image containing the same version of FLEXPART could then be tagged `flexpart_9.3.2e-2`, `flexpart_9.3.2e-3` and so on.
 
 
 # A Note on Licensing
