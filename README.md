@@ -1,22 +1,13 @@
-We will use this *README* file for general comments and instructions on the project.
+This `README.md` file contains the main project documentation.
+The `documentation` folder also includes the final version of the bachelors thesis that originally motivated this project. It serves as a very detailed background documentation.
 
 This project provides docker image sources for a number of containers that can be used to run pre configured FLEXPART simulations (see https://www.flexpart.eu/).
-These pre configured FLEXPART simulations are designed to meet the needs of the AlpEnDAC project (see https://www.alpendac.eu).
-Actually running simulations requires appropriate input data (not provided by this repository).
+These pre configured FLEXPART simulations were originally designed to meet the needs of the AlpEnDAC project (see https://www.alpendac.eu).
 
+The project now aims to transition these AlpEnDAC specific FLEXPART containers for fully general FLEXPART use.
+The hope is that this will provide some benefit to the FLEXPART community.
 
-# Conventions
-
-* All regular project file and folder names, should use all lower underscore case.
-* We prefer to keep the use of abbreviation to a minimum in most cases.
-* We prefer one line per sentence for text based source files.
-  (One line is the smallest unit for which Git tracks changes).
-* Work is done on the `active` and other branches, which can be rebased before merging into `master`.
-
-
-# Project Folder Structure
-
-* Each docker image build context provided, is placed within its own folder in the repository root.
+As of this writing, actually running simulations requires appropriate input data not provided by this repository.
 
 
 # Basic Usage Instructions
@@ -44,6 +35,15 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 
 # Usage
 # Contribution Guidelines
+## General Conventions
+
+* All regular project file and folder names, should use all lower underscore case.
+* We prefer to keep the use of abbreviation to a minimum in most cases.
+* We prefer one line per sentence for text based source files.
+  (One line is the smallest unit for which Git tracks changes).
+* Work is done on the `active` and other branches, which can be rebased before merging into `master`.
+
+
 # Repository Structure
 # Tags and Version History
 
