@@ -17,7 +17,7 @@ As of this writing, actually running simulations requires appropriate input data
 ## Quick Start Guide
 
 The following describes how to run a basic FLEXPART simulation.
-Currently it requires access to a sshfs based data repository belonging to AlpEnDAC.
+Currently it requires access to FLEXPART input data belonging to AlpEnDAC.
 
 > Note that these instructions presume a Linux system with a working Docker installation.
 > For more on obtaining Docker, see https://docs.docker.com/install/.
