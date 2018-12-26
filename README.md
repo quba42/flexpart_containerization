@@ -1,6 +1,9 @@
 This `README.md` file contains the main project documentation.
 The `documentation` folder also includes the final version of the bachelors thesis that originally motivated this project. It serves as a very detailed background documentation.
 
+
+# Introduction
+
 This project provides docker image sources for a number of containers that can be used to run pre configured FLEXPART simulations (see https://www.flexpart.eu/).
 These pre configured FLEXPART simulations were originally designed to meet the needs of the AlpEnDAC project (see https://www.alpendac.eu).
 
