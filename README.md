@@ -1,9 +1,5 @@
 We will use this *README* file for general comments and instructions on the project.
 
-> Note that this repository has been extracted from a larger parent project.
-> All commits past the `legacy_history` tag, stem from before it was turned into a stand alone repository.
-> With the addition (merge into master) of this *README.md* file, the transition to a stand alone project is considered complete.
-
 This project provides docker image sources for a number of containers that can be used to run pre configured FLEXPART simulations (see https://www.flexpart.eu/).
 These pre configured FLEXPART simulations are designed to meet the needs of the AlpEnDAC project (see https://www.alpendac.eu).
 Actually running simulations requires appropriate input data (not provided by this repository).
@@ -45,6 +41,22 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 8. Run your first example simulation using default parameters: `./run_alpendac_prototype.sh`
 
 > Note that the creation of any volume containing relevant Flexpart input data will work instead of steps 4-6 above.
+
+# Usage
+# Contribution Guidelines
+# Repository Structure
+# Tags and Version History
+
+This repository currently includes two tags in it's history.
+The `alpendac_portotype` tag marks the final point in this repositories history that is referenced by the bachelors thesis that originally motivated this project.
+(The final version of this bachelors thesis can be found under `documentation/bachelors_thesis.pdf`.)
+
+The `legacy_history` tag marks the point in the history at which this repository was extracted from its non public parent repository to form a stand alone project.
+
+Any future tags should mark the point at which a specific container image is released in a specific version.
+Version tags for containers should use the following format: `<container_name>_<contained_software_version>-<container_version>`
+For example, the point in the history that first provides a container image containing FLEXPART version `9.3.2e` would be tagged with `flexpart_9.3.2e-1`.
+Any flexpart images built from this point in the history would then be tagged (using the Docker tag mechanism) with `flexpart/flexpart:9.3.2e-1`.
 
 
 # A Note on Licensing
