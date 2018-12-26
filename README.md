@@ -13,9 +13,10 @@ The hope is that this will provide some benefit to the FLEXPART community.
 As of this writing, actually running simulations requires appropriate input data not provided by this repository.
 
 
-# Basic Usage Instructions
+# Usage
+## Quick Start Guide
 
-The following describes a quick guide how to run a basic FLEXPART simulation.
+The following describes how to run a basic FLEXPART simulation.
 Currently it requires access to a sshfs based data repository belonging to AlpEnDAC.
 
 > Note that these instructions presume a Linux system with a working Docker installation.
@@ -26,18 +27,24 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 > It may not work with much older versions of Docker.
 
 1. Clone this repository to any Linux host with a working Docker installation.
-2. Change to the repositories base directory: `cd <path_to_git_repo>/flexpart_containerization/`
-3. Build the main container image: `./build_alpendac_prototype.sh`
-4. Obtain access to FLEXPART input data. (Currently this involves contacting someone at AlpEnDAC about getting access).
-5. Install `vieux/sshfs` (https://github.com/vieux/docker-volume-sshfs) in case you want to use the sshfs based data repository for input data: `docker plugin install vieux/sshfs`
-6. Create the input data volume: `docker volume create -d vieux/sshfs -o sshcmd=weatherdata@<alpendac_sshfs_repo_ip_addr>:/weatherdata/GFS -o password=<password> -o port=<port> flexpart_input_sshfs`
-7. Create a local output data volume: `docker volume create flexpart_output_local`
-8. Run your first example simulation using default parameters: `./run_alpendac_prototype.sh`
+2. Change working directory to the repository base: `cd <path_to_git_repo>/flexpart_containerization/`
+3. Run `git submodule init` and `git submodule update` to ensure the submodules are downloaded.
+4. Build the main container image: `./scripts/build_flexpart.sh`
+5. Create the needed data volumes: `docker volume create flexpart_input_local` and `docker volume create flexpart_output_local`
+6. Obtain access to FLEXPART input data. (Currently this requires contacting someone at AlpEnDAC).
+7. Ensure that your FLEXPART input data is placed within the `flexpart_input_local` volume you just created.
+8. Run your first example simulation using default parameters: `./scripts/run_flexpart.sh`
 
-> Note that the creation of any volume containing relevant FLEXPART input data will work instead of steps 4-6 above.
+The output data of your FLEXPART run will be placed inside the `flexpart_output_local` volume.
 
-# Usage
-# Contribution Guidelines
+> Note that there are many possible ways to achieve steps 5 to 7 above.
+> The official Docker documentation (https://docs.docker.com) is a good place to get started.
+> Providing a fully automated default way to achieve these steps is a priority TODO for this project.
+
+
+## The QuickLook Container
+
+# Contribution Guide
 ## General Conventions
 
 * All regular project file and folder names, should use all lower underscore case.
@@ -47,8 +54,8 @@ Currently it requires access to a sshfs based data repository belonging to AlpEn
 * Work is done on the `active` and other branches, which can be rebased before merging into `master`.
 
 
-# Repository Structure
-# Tags and Version History
+## Repository Structure
+## Tags and Version History
 
 This repository currently includes two tags in its history.
 
