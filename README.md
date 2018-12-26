@@ -1,5 +1,6 @@
 This `README.md` file contains the main project documentation.
-The `documentation` folder also includes the final version of the bachelors thesis that originally motivated this project. It serves as a very detailed background documentation.
+The `documentation` folder also includes the final version of the bachelors thesis that originally motivated this project.
+It serves as a very detailed background documentation.
 
 
 # Introduction
