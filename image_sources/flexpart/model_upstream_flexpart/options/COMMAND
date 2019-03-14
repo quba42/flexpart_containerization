@@ -1,0 +1,31 @@
+
+
+
+
+
+
+
+-1                                   DIRECTION
+20140731 000000
+20140802 000000
+07200                                SSSSS         OUTPUT EVERY SSSSS SECONDS
+07200                                SSSSS          TIME AVERAGE OF OUTPUT
+00900                                SSSSS          SAMPLING RATE DF OUTPUT
+999999                               SSSSSSS       TIME CONSTANT FOR PARTICLE SPLITTING (IN SECONDS)
+00900                                SSSSS           SYNCHRONISATION INTERVAL OF FLEXPART (IN SECONDS)
+-5 CTL                               FACTOR, BY WHICH TIME STEP MUST BE SMALLER THAN TL
+4                                    IFIHE         DECREASE OF TIME STEP FOR VERTICAL MOTION BY FACTOR IFINE
+5                                    IOUT          1 CONC, 2 MIXING RATIO, 3 BOTH 4 PLUME TRAJECT.,5 = 1 and 4 same time
+0                                    IPOUT           PARTICLE DUMP: 0 NO, 1 EVERY OUTPUT INTERVAL, 2 ONLY AT END
+1                                    LSUBGRID       SUBGFUD TERRAIN EFFECT PARAMETERIZATION: 1 YES, 8 NO
+1                                    LCONVECTION     CONVECTION: 1 YES, 0 NO
+0                                    LAGESPECTRA    AGE SPECTRA: 1 YES, 0 NO
+0                                    IRIN           CONTINUE SIMULATION WITH DUMPED PARTICLE DATA: 1 YES, 0 NO
+1                                    OUTPUTFOREACHRELEASE.: 1 YES, 0 NO
+0                                    IFLUX          CALCULATE FLUXES: 1 YES, 0 NO
+0                                    MDOMAINFILL
+1                                    IND_SOURCE
+1                                    IND_RECEPTOR
+0                                    MQUASILAG
+0                                    NESTED_OUTPUT
+1                                    LINIT_COND
